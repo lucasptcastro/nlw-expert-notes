@@ -1,4 +1,5 @@
 import logo from "./assets/logo-nlw-expert.svg";
+import { NewNoteCard } from "./componentes/NewNoteCard";
 import { NoteCard } from "./componentes/NoteCard";
 
 export function App() {
@@ -18,17 +19,15 @@ export function App() {
 
       {/* auto-rows é basicamente o tamanho dos componentes que estarão no grid */}
       <div className="grid grid-cols-3 auto-rows-[250px] gap-6">
-        <div className="rounded-md bg-slate-700 p-5 space-y-3">
-          <span className="text-sm font-medium text-slate-200">
-            Adicionar nota
-          </span>
-          <p className="text-sm leading-6 text-slate-400 ">
-            Grave uma nota em áudio que será convertida para texto
-            automaticamente.
-          </p>
-        </div>
+        <NewNoteCard />
 
-        <NoteCard />
+        <NoteCard
+          note={{
+            date: new Date(),
+            content:
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus officiis doloribus ipsam sunt dicta saepe ex labore, nihil minus delectus doloremque beatae, reiciendis aliquid. Quae ratione suscipit totam odit enim!",
+          }}
+        />
       </div>
     </div>
   );
